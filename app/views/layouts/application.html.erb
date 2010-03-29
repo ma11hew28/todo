@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<% @description = "TODO is a simple task management system." -%>
+<html lang="en" id="todo">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title><%= APP_NAME + ' | ' + controller.action_name %></title>
+  <meta name="description" content="<%= @description %>" />
+  <%= stylesheet_link_tag 'style' %>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+<body>
+  <header>
+    <h1><%= APP_NAME %></h1>
+    <h2><%= @description %></h2>
+  </header>
+
+  <%= yield %>
+
+  <footer>
+    <ul>
+      <li><%= APP_NAME %> &copy; 2010</li>
+      <li><a href="mailto:<%= CONTACT %>">Contact</a></li>
+      <%= if logged_in? then '<li>' + link_to("Log out", :logout) + '</li>' end %>
+      <!-- <li><a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.example.com/" target="blank">HTML5</a></li> -->
+    </ul>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<% form_for @user, :url => :signup do |f| %>
+  <fieldset><legend>Sign Up</legend>
+    <%= f.error_messages %>
+    <p style="color: green"><%= flash[:notice] %></p>
+    <%= f.label :email %> <%= f.text_field :email, :size => nil %>
+    <%= f.submit("Sign up") + ' or ' + link_to('Log in to '+APP_NAME, :login) %>
+  </fieldset>
+<% end %>

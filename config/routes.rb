@@ -1,10 +1,10 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :users
-  map.resource  :session
+ActionController::Routing::Routes.draw do |map|  
   map.resources :todos
-  map.signup '/signup', :controller => 'users', :action => 'new'
-  map.login  '/login', :controller => 'sessions', :action => 'new'
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+
+  map.home '/', :controller => 'todos', :action => 'index'
+  map.signup '/signup', :controller => 'users', :action => 'signup'
+  map.login  '/login', :controller => 'users', :action => 'login'
+  map.logout '/logout', :controller => 'users', :action => 'logout'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
