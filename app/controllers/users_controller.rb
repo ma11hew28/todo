@@ -18,18 +18,25 @@ class UsersController < ApplicationController
     if request.post?
       if user = User.find_by_email(params[:email])
         session[:user_id] = user.id
+        if params[:remember_me]
+          cookies[:remember_me] = {
+            :value => user.email,
+            :expires => 20.years.from_now
+          }
+        end
         uri = session[:goto_uri]
         session[:goto_uri] = nil
         flash[:notice] = "Logged in successfully."
         redirect_to uri || :home
       else
-        flash.now[:notice] = "Invalid email. The email you entered does not belong to any account."
+        flash.now[:notice] = "Invalid email. The email you entered is not in our system."
       end
     end
   end
 
   def logout
     session[:user_id] = nil
+    cookies.delete :remember_me
     flash[:notice] = "Logged out successfully."
     redirect_to :login
   end

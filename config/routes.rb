@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|  
-  map.resources :todos
+  map.resources :todos, :collection => { :sort => :post }
 
   map.home '/', :controller => 'todos', :action => 'index'
   map.signup '/signup', :controller => 'users', :action => 'signup'

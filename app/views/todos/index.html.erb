@@ -1,26 +1,17 @@
-<h1>Listing todos</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Due</th>
-    <th>Done</th>
-  </tr>
-
-<% @todos.each do |todo| %>
-  <tr>
-    <td><%=h todo.title %></td>
-    <td><%=h todo.description %></td>
-    <td><%=h todo.due %></td>
-    <td><%=h todo.done %></td>
-    <td><%= link_to 'Show', todo %></td>
-    <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-    <td><%= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<p style="color: green"><%= flash[:notice] %></p>
 
 <%= link_to 'New todo', new_todo_path %>
+
+<ul id="todos">
+<% for todo in @todos %>
+  <% content_tag_for :li, todo do %>
+    <span class="handle">[drag]</span>
+    <span><%= h(todo.title) %></span>
+    <span><%= link_to 'Show', todo %></span>
+    <span><%= link_to 'Edit', edit_todo_path(todo) %></span>
+    <span><%= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete %></span>
+    <span><%= "✓" if todo.done %></span>
+  <% end %>
+<% end %>
+</ul>
+<%= sortable_element("todos", :url => sort_todos_path, :handle => "handle") %>

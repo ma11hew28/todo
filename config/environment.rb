@@ -39,7 +39,7 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 
-  # Store session data in the database, not in cookies.
+  # Store session data in database.
   config.action_controller.session_store = :active_record_store
 
   # Application Constants

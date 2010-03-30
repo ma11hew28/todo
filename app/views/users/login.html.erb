@@ -1,7 +1,7 @@
 <% form_tag do %>
   <fieldset><legend>Log In</legend>
     <p style="color: green"><%= flash[:notice] %></p>
-    <%= label_tag :email %> <%= text_field_tag :email, params[:email] %>
-    <%= submit_tag("Login") + ' or ' + link_to('Sign up for '+APP_NAME, :signup) %>
+    <p><%= label_tag :email %> <%= text_field_tag :email, params[:email] %> <%= label_tag :remember_me %> <%= check_box_tag :remember_me, params[:remember_me] %></p>
+    <p><%= submit_tag("Login") + ' or ' + link_to('Sign up for '+APP_NAME, :signup) %></p>
   </fieldset>
 <% end %>
