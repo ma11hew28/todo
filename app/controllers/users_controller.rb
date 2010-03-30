@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         flash[:notice] = "Thank you for signing up! You are now logged in."
-        redirect_to :home
+        redirect_to root_url
       else
         render :action => 'signup'
       end
@@ -27,9 +27,9 @@ class UsersController < ApplicationController
         uri = session[:goto_uri]
         session[:goto_uri] = nil
         flash[:notice] = "Logged in successfully."
-        redirect_to uri || :home
+        redirect_to uri || root_url
       else
-        flash.now[:notice] = "Invalid email. The email you entered is not in our system."
+        flash.now[:notice] = "Invalid email. That email is not in our system."
       end
     end
   end

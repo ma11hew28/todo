@@ -23,7 +23,7 @@ module Authentication
   def logout_required
     if logged_in?
       flash[:notice] = 'You must first <a href="/logout">log out</a> before accessing that page.'
-      redirect_to :home
+      redirect_to root_url
     end
   end
 end

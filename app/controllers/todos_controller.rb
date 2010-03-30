@@ -44,10 +44,16 @@ class TodosController < ApplicationController
 
     if @todo.update_attributes(params[:todo])
       flash[:notice] = 'Todo was successfully updated.'
-      redirect_to home_url
+      redirect_to root_url
     else
       render :action => "edit"
     end
+  end
+
+  def complete
+     @todo = Todo.find(params[:id])
+     @todo.update_attributes(:complete => true)
+     redirect_to :action => "index"
   end
 
   # DELETE /todos/1

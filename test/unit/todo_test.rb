@@ -8,6 +8,8 @@ class TodoTest < ActiveSupport::TestCase
 end
 
 
+
+
 # == Schema Information
 #
 # Table name: todos
@@ -16,9 +18,13 @@ end
 #  title       :string(255)
 #  description :text
 #  due         :datetime
-#  done        :boolean
+#  complete    :boolean
 #  created_at  :datetime
 #  updated_at  :datetime
 #  position    :integer
+#  user_id     :integer
+#  parent_id   :integer
+#  lft         :integer
+#  rgt         :integer
 #
 
