@@ -44,5 +44,5 @@ Rails::Initializer.run do |config|
 
   # Application Constants
   APP_NAME = "TODO"
-  CONTACT = "liveloveprosper@gmail.com"
+  CONTACT = "http://www.mattdipasquale.com/contact"
 end

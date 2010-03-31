@@ -19,7 +19,7 @@
   <footer>
     <ul>
       <li><%= APP_NAME %> &copy; 2010</li>
-      <li><a href="mailto:<%= CONTACT %>">Contact</a></li>
+      <li><a href="<%= CONTACT %>">Contact</a></li>
       <%= if logged_in? then '<li>' + link_to("Log out", :logout) + '</li>' end %>
       <!-- <li><a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.example.com/" target="blank">HTML5</a></li> -->
     </ul>
