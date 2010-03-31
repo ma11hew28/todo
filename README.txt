@@ -1,6 +1,7 @@
 == Welcome to TODO
 
 TODO is a simple task-management system built with Ruby on Rails.
+You can try it out here: http://todo-fun.heroku.com/
 
 
 Features:
