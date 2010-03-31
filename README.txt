@@ -2,7 +2,9 @@
 
 TODO is a simple task-management system built with Ruby on Rails.
 
+
 Features:
+
   * Create a user account with just my email address (no password required).
   * Add a todo that includes a:
       - title (required),
@@ -13,10 +15,24 @@ Features:
   * Login using only a registered email address.
   * Remember me by storing my email address in a browser cookie.
 
+
 Installation:
-  1. Install Ruby & Rails if you haven't already.
-  2. Clone/fork todo, open Terminal to todo/, and enter: rake db:migrate
-  3. Navigate to http://localhost:3000/ in your browser.
+
+  1. Download:
+    - Clone/fork todo.
+  
+  2. Install:
+    - Install Ruby & Rails.
+    - Install a database engine, preferably the sqlite3-ruby gem.
+    - If you don't use SQLite, edit todo/config/database.yml for your database.
+    - Enter the following command to create a database and install the schema:
+      rake db:migrate
+
+  3. Run:
+    - Enter the command: ruby script/server
+    - Navigate to http://localhost:3000/ in your browser.
+
 
 Developers:
+
   * Matt Di Pasquale - http://www.mattdipasquale.com/
